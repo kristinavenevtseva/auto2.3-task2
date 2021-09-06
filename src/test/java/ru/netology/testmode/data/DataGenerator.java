@@ -4,10 +4,8 @@ import com.github.javafaker.Faker;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
-import io.restassured.response.ResponseBody;
 import io.restassured.specification.RequestSpecification;
 import lombok.Value;
-import lombok.var;
 
 import java.util.Locale;
 
@@ -57,7 +55,7 @@ public class DataGenerator {
         }
 
         public static RegistrationDto getRegisteredUser(String status) {
-            var registeredUser = getUser(status);
+            RegistrationDto registeredUser = getUser(status);
             DataGenerator.sendRequest(registeredUser);
             return registeredUser;
         }
